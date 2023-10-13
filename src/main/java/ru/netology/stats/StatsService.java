@@ -6,15 +6,19 @@ import java.util.stream.IntStream;
 //суммa всех продаж
 public class StatsService {
     public int totalSales(int[] sales) {
-        int sum = IntStream.of(sales).sum();
+        int totalSales[] = sales;
+        int sum = 0;
+        for (int i = 0; i < totalSales.length; i++) {
+            sum = sum + totalSales[i];
+        }
+
 
         return sum;
     }
 
     //средняя сумма продаж в месяц
     public int getAverageSum(int[] sales) {
-        int average = IntStream.of(sales).sum();
-        int averageSum = average / 12;
+        int averageSum = totalSales(sales) / 12;
         return averageSum;
     }
 
@@ -31,6 +35,7 @@ public class StatsService {
 
         return maxMonth + 1;
     }
+
     //номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
     public int minSale(int[] sales) {
 
@@ -45,6 +50,7 @@ public class StatsService {
         return minMonth + 1;
 
     }
+
     //количество месяцев, в которых продажи были ниже среднего
     public int monthBelowAverage(int[] sales) {
         int monthBelow = 0;
@@ -56,9 +62,10 @@ public class StatsService {
         }
 
 
-return monthBelow;
+        return monthBelow;
 
     }
+
     //количество месяцев, в которых продажи были выше среднего
     public int monthHigherAverage(int[] sales) {
         int monthHigher = 0;

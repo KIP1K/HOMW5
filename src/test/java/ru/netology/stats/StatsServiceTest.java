@@ -19,7 +19,7 @@ public class StatsServiceTest {
         };
         int expextedSum = 18_000_000;
         int actualSum = service.totalSales(sales);
-        System.out.println(actualSum);
+
 
         Assertions.assertEquals(expextedSum, actualSum);
     }
@@ -38,6 +38,7 @@ public class StatsServiceTest {
         int expextedAverageSum = 1_500_000;
         int actualSum = service.getAverageSum(sales);
 
+
     }
 
     //номер месяца, в котором был пик продаж, то есть осуществлены продажи на максимальную сумму
@@ -55,6 +56,7 @@ public class StatsServiceTest {
         int actualMaxMounthSale = service.maxSale(sales);
 
     }
+
     //номер месяца, в котором был минимум продаж, то есть осуществлены продажи на минимальную сумму
     @Test
     public void shouldMinSaleMounth() {
@@ -70,7 +72,8 @@ public class StatsServiceTest {
 
 
     }
-//количество месяцев, в которых продажи были ниже среднего
+
+    //количество месяцев, в которых продажи были ниже среднего
     @Test
 
     public void shouldMinTotalSaleMounth() {
@@ -87,7 +90,7 @@ public class StatsServiceTest {
 
     }
 
-//количество месяцев, в которых продажи были выше среднего
+    //количество месяцев, в которых продажи были выше среднего
     @Test
 
     public void shouldHigherAverageMonth() {
